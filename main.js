@@ -21,9 +21,8 @@ const divisionELDOM = document.getElementsByClassName("divisor")[0]
 //Variable de la pantalla definidia en el DOM
 const pantallaELDOM = document.getElementsByClassName("pantalla-arriba")[0]
 
-//Variable contenido de la pantalla
-let contenidoPantalla = document.getElementById("section1").textContent;
-console.log(contenidoPantalla)
+
+
 //Mostar en pantalla los numeros de los botones
 n0ELDOM.addEventListener("click", handleClick0)
 function handleClick0(){
@@ -67,22 +66,54 @@ function handleClick9(){
     pantallaELDOM.innerText += 9;
 }
 
+//Funcion Clear
+const clear = document.getElementsByClassName("reset")[0];
+clear.addEventListener("click", handleClickreset)
+function handleClickreset() {
+    pantallaELDOM.innerText = ""; 
+}
+
+//Variable para almacenar numeros 
+let numeros = [];
+//Variable para almacenar operadores
+let operador = "";
+
+let resultado; 
+
 //Funcion Igual
-
+igualELDOM.addEventListener("click", handleClickigual)
+    function handleClickigual(){
+    
+    }
 //Funcion Suma
-// sumaELDOM.addEventListener("click",handleClicksuma)
-// function handleClicksuma(){
-//     let operador = "+"
-//     let contenidoActual = contenidoPantalla  
-//     return (contenidoPantalla, "+")
-// }
-
-
+sumaELDOM.addEventListener("click",handleClicksuma)
+function handleClicksuma(){
+    operador = "+";
+    numeros.push(Number(pantallaELDOM.innerText), "+");
+    pantallaELDOM.innerText = "";
+}
 //Funcion Resta
-
+restaELDOM.addEventListener("click",handleClickresta)
+function handleClickresta(){
+    operador = "-";
+    numeros.push(Number(pantallaELDOM.innerText),"-");
+    pantallaELDOM.innerText = "";
+}
 //Funcion Multiplicar
-
+multiplicarELDOM.addEventListener("click",handleClickmultiplicar)
+function handleClickmultiplicar(){
+    operador = "*";
+    numeros.push(Number(pantallaELDOM.innerText), "*");
+    pantallaELDOM.innerText = "";
+}
 //Funcion Dividir
+divisionELDOM.addEventListener("click",handleClickdivision)
+function handleClickdivision(){
+    operador = "/";
+    numeros.push(Number(pantallaELDOM.innerText), "/");
+    pantallaELDOM.innerText = "";
+}
+
 
 
 
