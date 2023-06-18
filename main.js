@@ -83,7 +83,23 @@ let resultado;
 //Funcion Igual
 igualELDOM.addEventListener("click", handleClickigual)
     function handleClickigual(){
-    
+        numeros.push(Number(pantallaELDOM.innerText));
+  let operacion = '';
+  for (let i = 0; i < numeros.length; i++) {
+    if (i % 2 === 0) {
+      // Número
+      operacion += numeros[i];
+    } else {
+      // Operador
+      operacion += ' ' + numeros[i] + ' ';
+    }
+  }
+  
+  let resultado = eval(operacion); // Evalúa la expresión matemática
+  
+  pantallaELDOM.innerText = resultado;
+  numeros = [];
+  operador = "";
     }
 //Funcion Suma
 sumaELDOM.addEventListener("click",handleClicksuma)
